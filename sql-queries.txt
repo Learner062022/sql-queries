@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS customers (
+ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50),
+address VARCHAR(50),
+phone VARCHAR(15),
+suburb VARCHAR(15),
+post_code VARCHAR(4),
+state VARCHAR(3)
+);
+
+SELECT * FROM customers
+
+SELECT name FROM customers;
+
+SELECT name, phone FROM customers;
+
+SELECT name FROM customers WHERE state == "WA"
+
+SELECT name, phone FROM customers WHERE state == "WA"
+
+SELECT postcode FROM customers WHERE state != "NSW"
+
+SELECT address, suburb, postcode FROM customers WHERE state == "WA" or state == "SA"
+
+SELECT DISTINCT state FROM customers;
+
+SELECT name FROM customers ORDER BY name;
+
+SELECT name, state FROM customers ORDER BY state;
+
+CREATE INDEX phone_index ON customers (phone);
